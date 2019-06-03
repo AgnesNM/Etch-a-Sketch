@@ -20,3 +20,7 @@
 #grid-container > div:nth-child(2n+0){
     background-color: aqua;
 }
+#grid-container >div:hover{
+    background-color: brown;
+    text-decoration-line: line-through;    
+}
