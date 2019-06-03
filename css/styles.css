@@ -1,5 +1,9 @@
 #grid-container{
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 200px 200px 200px 200px;     
+    grid-gap: 1em;
+    grid-column-gap: 1em;   
     border: 3px dashed red;  
     width:900px;
     height:860px;
@@ -10,7 +14,7 @@
     width:300px;
     height:auto;
     border: black 1 px solid;
-    background-color: blue;    
+    background-color: blue;       
 }
 
 #grid-container > div:nth-child(2n+0){
