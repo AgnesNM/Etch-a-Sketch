@@ -1,0 +1,18 @@
+#grid-container{
+    display: grid;
+    border: 3px dashed red;  
+    width:900px;
+    height:860px;
+    margin: 0px auto;  
+}
+
+#grid-container > div{
+    width:300px;
+    height:auto;
+    border: black 1 px solid;
+    background-color: blue;    
+}
+
+#grid-container > div:nth-child(2n+0){
+    background-color: aqua;
+}
