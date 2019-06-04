@@ -17,5 +17,17 @@ let boxes = '<div class="warning" id ="box1"></div>'+
 
 document.getElementById("grid-container").innerHTML = boxes;
 
+document.getElementById("grid-container").onmouseover = handler;
+
+function handler(event){
+    if (event.type == 'mouseover') {
+        event.target.style.border = "dotted";
+      }
+}
+
+
+function reset(){
+  prompt("Enter a value to reset your grid", 0);
+}
 
 
