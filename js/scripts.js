@@ -1,35 +1,100 @@
-let boxes = '<div class="box1"></div>'+
-  '<div class="box2"></div>' +
-  '<div class="box3"></div>' +
-  '<div class="box4"></div>' +
-  '<div class="box5"></div>' +
-  '<div class="box6"></div>'+
-  '<div class="box7"></div>'+
-  '<div class="box8"></div>'+
-  '<div class="box9"></div>'+
-  '<div class="box10"></div>'+
-  '<div class="box11"></div>'+
-  '<div class="box12"></div>'+
-  '<div class="box13"></div>'+
-  '<div class="box14"></div>'+
-  '<div class="box15"></div>'+
-  '<div class="box16"></div>';
-
-  
-document.getElementById("grid-container").innerHTML = boxes;
-
-document.getElementById("grid-container").onmouseover = handler;
-
-function handler(event){
-    if (event.type == 'mouseover') {
-        event.target.style.border = "dotted";        
-      }
+//creating one div
+function allDivs(){
+  for (i=0;i<100;i++){
+      let div1 = document.createElement("div");
+      div1.className = "squares";
+      div1.innerHTML = 1;
+      document.getElementById("grid-container").appendChild(div1);
+ }
+ let htmlStyles = window.getComputedStyle(document.querySelector("html"));
+ let rowNum = parseInt(htmlStyles.getPropertyValue("--rowNum"));
+ document.documentElement.style.setProperty("--rowNum", 16);
+ let colNum = parseInt(htmlStyles.getPropertyValue("--colNum"));
+ document.documentElement.style.setProperty("--colNum", 16);
+        
+  someDivs();
+  someDivs2();    
 }
 
+allDivs();
 
-// function reset(){
-//   let gridValue = prompt("Enter a value to reset your grid", 0);
-//   console.log(gridValue);
-// }
+function someDivs(){
+  for (i=0;i<100;i++){
+      let div1 = document.createElement("div");
+      div1.className = "squares";
+      div1.innerHTML = 1;
+      document.getElementById("grid-container").appendChild(div1);
+  }
+}
 
-//This creates a 4X4 grid. We need to find a way to create practically any grid, starting with 16x16.
+function someDivs2(){
+  for (i=0;i<56;i++){
+      let div1 = document.createElement("div");
+      div1.className = "squares";
+      div1.innerHTML = 1;
+      document.getElementById("grid-container").appendChild(div1);
+  }
+}
+
+//background color on hover, haven't figured the pixelated part out though (used border for now)
+
+function bground(){
+  let squareDivs = document.getElementsByClassName("squares");
+  for(let squareDiv of squareDivs){
+      squareDiv.onmouseover = handler;
+  }
+  
+  function handler(event){
+      if (event.type == 'mouseover') {                        
+          event.target.style.backgroundColor = "plum";  
+          event.target.style.border = "dotted";        
+      }
+  }
+}
+
+bground();
+
+
+//creating an initial 16X16 grid //reset button to clear 
+function resetB(){    
+  let resetButton = document.getElementById("reset-btn");
+  resetButton.addEventListener('click', function(event){        
+      document.getElementById("grid-container").innerHTML= ""; 
+      anyDivs();        
+  }); 
+}
+
+resetB();
+
+//create any number of divs depending on the value entered in the prompt
+
+function anyDivs(n){
+  n = prompt("How many squares should each side of the new grid have?");
+      for (i=0;i<n;i++){
+      let div1 = document.createElement("div");
+      div1.className = "squares";
+      div1.innerHTML = 1;                                    
+  
+      for(x=1;x<n;x++){
+          let div1 = document.createElement("div");
+          div1.className = "squares";  
+          div1.innerHTML = 1;
+          document.getElementById("grid-container").appendChild(div1);       
+      } 
+  document.getElementById("grid-container").appendChild(div1);
+  }    
+  let htmlStyles = window.getComputedStyle(document.querySelector("html"));
+  let rowNum = parseInt(htmlStyles.getPropertyValue("--rowNum"));
+  document.documentElement.style.setProperty("--rowNum", n);
+  let colNum = parseInt(htmlStyles.getPropertyValue("--colNum"));
+  document.documentElement.style.setProperty("--colNum", n);
+  n = rowNum;
+  n = colNum; 
+  let squareDivs = document.getElementsByClassName("squares");  
+  bground();  
+} 
+
+//how to make the divs have a dynamic number of rows and columns
+
+
+

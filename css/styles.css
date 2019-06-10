@@ -6,15 +6,15 @@
     justify-content:center;
 }
 .reset-grid > button{
-    padding:2em;
+    padding:1em;
     border:1em;
-    margin:2em; 
+    margin:1em; 
     background-color:aqua;   
 }
 #grid-container{
-    display: grid;   
-    grid-template-rows: repeat(16, 1fr);
-    grid-template-columns: repeat(16,1fr);
+    display: grid;  
+    grid-template-columns: repeat(var(--colNum), auto);
+    grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
     grid-column-gap: 1em;
     border: 3px dashed red;  
     width:auto;
@@ -23,18 +23,12 @@
 }
 
 #grid-container > div{
-    width:50px;
-    height:50px;
-    border: black 1 px solid;
+    width:auto;
+    height:auto;
+    border: solid red 1px;
     background-color: blue;       
 }
 
-#grid-container > div:nth-child(2n+0){
+#grid-container > div:nth-child(3n+0){
     background-color: aqua;   
 }
-#grid-container >div:hover{
-    background-color: plum;        
-}
-
-/* grid-template-rows: repeat(var(--n), var(--gridHeight));
-    grid-template-columns: repeat(var(--n), auto); */
