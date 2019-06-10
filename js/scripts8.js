@@ -60,7 +60,7 @@ function resetB(){
 
 resetB();
 
-//create any number of divs entered in the prompt
+//create any number of divs depending on the value entered in the prompt
 
 function anyDivs(n){
     n = prompt("How many squares should each side of the new grid have?");        

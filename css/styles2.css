@@ -12,9 +12,9 @@
     background-color:aqua;   
 }
 #grid-container{
-    display: grid;   
-    grid-template-rows: repeat(16, 1fr);
-    grid-template-columns: repeat(16,1fr);
+    display: grid;  
+    grid-template-columns: repeat(var(--colNum), auto);
+    grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
     grid-column-gap: 1em;
     border: 3px dashed red;  
     width:auto;
@@ -31,7 +31,4 @@
 
 #grid-container > div:nth-child(2n+0){
     background-color: aqua;   
-}
-
-   /* grid-template-rows: repeat(var(--n), fr1);
-    grid-template-columns: repeat(var(--n), auto); */
+}  
