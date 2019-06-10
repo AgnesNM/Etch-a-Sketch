@@ -6,9 +6,9 @@
     justify-content:center;
 }
 .reset-grid > button{
-    padding:2em;
+    padding:1em;
     border:1em;
-    margin:2em; 
+    margin:1em; 
     background-color:aqua;   
 }
 #grid-container{
