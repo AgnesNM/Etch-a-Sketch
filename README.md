@@ -2,7 +2,7 @@
 This is a simple sketch where you get to play around with different grid sizes. Done as part of Microverse pre-course.
 
 #### 10th June 2019
-#### Agnes Mwaniki (agnesndutamwaniki@gmail.com) and Ted Sandico
+#### Agnes Mwaniki (agnesndutamwaniki@gmail.com) 
 
 ## Introduction
 This is a simple sketch where you get to play around with different grid sizes. Done as part of Microverse pre-course.
